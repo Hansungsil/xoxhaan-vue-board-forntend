@@ -1,0 +1,65 @@
+/* Gotham */
+@font-face {
+	font-family: 'gotham_Light';
+	font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Gotham-Light.eot');
+	src: url('../fonts/Gotham-Light.eot?iefix#') format('embedded-opentype'); /* IE8 이하 */
+	src:local(※), url('../fonts/Gotham-Light.woff') format('woff');/* IE9 이상, 기타 웹브라우저, 모바일 */
+}
+
+@font-face {
+	font-family: 'gotham_Book';
+	font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Gotham-Book.eot');
+	src: url('../fonts/Gotham-Book.eot?iefix#') format('embedded-opentype'); /* IE8 이하 */
+	src:local(※), url('../fonts/Gotham-Book.woff') format('woff');/* IE9 이상, 기타 웹브라우저, 모바일 */
+}
+
+@font-face {
+	font-family: 'gotham_Medium';
+	font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Gotham-Medium.eot');
+	src: url('../fonts/Gotham-Medium.eot?iefix#') format('embedded-opentype'); /* IE8 이하 */
+	src:local(※), url('../fonts/Gotham-Medium.woff') format('woff');/* IE9 이상, 기타 웹브라우저, 모바일 */
+}
+
+@font-face {
+	font-family: 'gotham_Bold';
+	font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Gotham-Bold.eot');
+	src: url('../fonts/Gotham-Bold.eot?iefix#') format('embedded-opentype'); /* IE8 이하 */
+	src: local(※), url('../fonts/Gotham-Bold.woff') format('woff');/* IE9 이상, 기타 웹브라우저, 모바일 */
+}
+
+@font-face {
+	font-family: 'gotham_Black';
+	font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Gotham-Black.eot');
+	src: url('../fonts/Gotham-Black.eot?iefix#') format('embedded-opentype'); /* IE8 이하 */
+	src: local(※), url('../fonts/Gotham-Black.woff') format('woff');/* IE9 이상, 기타 웹브라우저, 모바일 */
+}
+
+/* 윤고딕 120 */
+@font-face {
+    font-family: 'YDIYGO120';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/YDIYGO120.eot');
+    src: url('../fonts/YDIYGO120.eot?iefix#') format('embedded-opentype');
+    src: local(※), url('../fonts/YDIYGO120.woff') format('woff');
+}
+
+/* 윤고딕 140 */
+@font-face {
+    font-family: 'YDIYGO140';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/YDIYGO140.eot');
+    src: url('../fonts/YDIYGO140.eot?#iefix') format('embedded-opentype');
+    src: local(※), url('../fonts/YDIYGO140.woff') format('woff');
+}

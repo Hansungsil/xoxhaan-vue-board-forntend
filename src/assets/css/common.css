@@ -1,0 +1,41 @@
+* {margin: 0; padding: 0;}
+ul, li, ol {list-style-type: none;}
+table {border-collapse: collapse;}
+a {text-decoration: none; color: inherit;}
+select {font-size: inherit; font-family: inherit; border: none; outline: none;}
+button {border: none; outline: none;}
+textarea { outline: none;}
+
+/* input 기본 스타일 초기화 */
+input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+			appearance: none;
+			   outline: none;
+				border: none;
+			box-shadow: none !important;
+}
+:-webkit-autofill { color: #fff !important; }
+
+/* Select box 스타일 초기화 */ 
+select {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+/* IE 에서 Select box 화살표 제거 */ 
+select::-ms-expand { display: none; }
+
+.clearfix {*zoom:1; /*zoom:1*/}
+.clearfix:after {content:''; display:block; clear:both;}
+
+html {
+	height: 100%;
+}
+body {
+	font-family: YDIYGO120;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
