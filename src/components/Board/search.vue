@@ -88,47 +88,58 @@ export default {
   height: 1.875rem; /* 30px */
   cursor: pointer;
 }
+/* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #boardSearch {
     margin: 0 auto;
-    width: 350px; /* 1100px */
-    min-width: 350px; /* 1100px */
-    max-width: 350px; /* 1100px */
-    margin-top: 40px; /* 100px */
+    width: 21.875rem; /* 350px */
+    min-width: 21.875rem; /* 350px */
+    max-width: 21.875rem; /* 350px */
+    margin-top: 2.5rem; /* 40px */
   }
   .searchOption {
-    /* margin-left: -260px; */
-    width: 90px; /* 250px */
-    height: 42px; /* 80px */
-    border-top-left-radius: 20px; /* 50px */
-    border-top-right-radius: 20px; /* 50px */
-    border-bottom-left-radius: 0; /* 50px */
-    font-size: 14px; /* 16px */
-    padding-right: 17px; /* 95px */
+    width: 5.625rem; /* 90px */
+    height: 2.625rem; /* 42px */
+    border-top-left-radius: 1.25rem; /* 20px */
+    border-top-right-radius: 1.25rem; /* 20px */
+    border-bottom-left-radius: 0;
+    font-size: 0.875rem; /* 14px */
+    padding-right: 1.0625rem; /* 17px */
     font-family: YDIYGO120;
   }
   .searchText {
-    width: 210px; /* 749px */
-    height: 38px; /* 76px */
-    padding: 0 10px; /* 20px */
-    border-top: 0; /* 2px */
+    width: 13.125rem; /* 210px */
+    height: 2.375rem; /* 38px */
+    padding: 0 0.625rem; /* 0 10px */
+    border-top: 0;
     border-bottom: 0.125rem solid #4db7a9; /* 2px */
   }
   .searchBtn {
     vertical-align: -0.5rem; /* -8px */
-    width: 30px; /* 81px */
-    height: 32px; /* 80px */
-    border-top: 0; /* 2px */
-    border-right: 0; /* 2px */
+    width: 1.875rem; /* 30px */
+    height: 2rem; /* 32px */
+    border-top: 0;
+    border-right: 0;
     border-bottom: 0.125rem solid #4db7a9; /* 2px */
-    border-top-right-radius: 0; /* 50px */
-    border-bottom-right-radius: 0; /* 50px */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     background-color: #fff;
     color: #4db7a9;
   }
   .searchIcon {
-    width: 20px; /* 31px */
-    height: 20px; /* 30px */
+    width: 1.25rem; /* 20px */
+    height: 1.25rem; /* 20px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  #boardSearch {
+    width: 19.375rem; /* 310px */
+    min-width: 19.375rem; /* 310px */
+    max-width: 19.375rem; /* 310px */
+  }
+  .searchText {
+    width: 10.625rem; /* 170px */
   }
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
   <div id="allHeader">
-    <p>BOARD&nbsp;<span>PROJECT</span></p>
+    <transition name="subLogoShow" appear>
+      <p>BOARD&nbsp;<span>PROJECT</span></p>
+    </transition>
     <div v-if="loggedIn" class="loginWrap">
       <span class="userName">{{ userName }}</span>
       <button @click.prevent="logout" class="loginBtn"><router-link to="/logout">LOGOUT</router-link></button>
@@ -68,6 +70,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #allHeader {
+  width: 100%;
   /* 총 height: 150px */
   padding: 3.3125rem 0; /* 53px 0 (p태그에 상, 하 2px 씩 추가됨)*/
   border-bottom: 0.0625rem solid #e5e5e5; /* 1px */
@@ -78,6 +81,13 @@ export default {
   font-size: 2.5rem; /* 40px */
   color: #e75735;
   letter-spacing: 0.3125rem /* 5px */
+}
+.subLogoShow-enter-active {
+  transition: all 1s;
+}
+.subLogoShow-enter {
+  opacity: 0;
+  transform: translateY(0.625rem) /* 10px */
 }
 .loginWrap {
   margin: -2.5625rem 3.125rem 0 auto; /* -41px 50px 0 auto */
@@ -100,41 +110,56 @@ export default {
   font-family: gotham_Medium;
   font-size: 0.875rem; /* 14px */
   cursor: pointer;
+  transition: all .3s ease-out;
 }
 .loginBtn:hover {
   background-color: #4db7a9;
   color: #fff;
+  transition: all .3s ease-out;
 }
+/* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #allHeader {
     /* 총 height: 85px */
-    padding: 10px 0 20px 0; /* 10px 0 20px 0 (p태그에 상, 하 2px 씩 추가됨)*/
+    padding: 0.625rem 0 1.25rem 0; /* 10px 0 20px 0 (p태그에 상, 하 2px 씩 추가됨)*/
   }
   #allHeader p {
-    width: 111px; /* 111px */
-    margin: 10px 0 0 20px; /* 10px 0 0 20px */
+    width: 6.9375rem; /* 111px */
+    margin: 0.625rem 0 0 1.25rem; /* 10px 0 0 20px */
     text-align: left;
     overflow: visible;
-    font-size: 23px; /* 23px */
+    font-size: 1.4375rem; /* 23px */
     letter-spacing: 0;
   }
   #allHeader p span{
     display: block;
   }
   .loginWrap {
-    margin: -60px 0 30px auto; /* -60px 0 30px auto */
-    min-width: 414px; /* 900px */
+    margin: -3.75rem 0 1.875rem auto; /* -60px 0 30px auto */
+    min-width: 25.875rem; /* 414px */
   }
   .userName {
-    font-size: 15px; /* 15px */
-    margin-right: 10px; /* 10px */
+    font-size: 0.9375rem; /* 15px */
+    margin-right: 0.625rem; /* 10px */
   }
   .loginBtn {
-    width: 80px; /* 80px */
-    height: 30px; /* 30px */
+    width: 5rem; /* 80px */
+    height: 1.875rem; /* 30px */
     font-family: gotham_Bold;
-    font-size: 12px; /* 12px */
-    margin-right: 10px; /* 10px */
+    font-size: 0.75rem; /* 12px */
+    margin-right: 0.625rem; /* 10px */
+  }
+}
+/* iphone 6/7/8 */
+@media screen and (max-width: 375px) {
+  .loginWrap {
+    min-width: 23.4375rem; /* 375px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  .loginWrap {
+    min-width: 20rem; /* 320px */
   }
 }
 </style>

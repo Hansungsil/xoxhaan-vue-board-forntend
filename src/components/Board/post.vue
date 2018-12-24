@@ -160,6 +160,7 @@ export default {
   font-family: gotham_Bold;
   letter-spacing: 0.375rem; /* 6px */
   font-size: 0.875rem; /* 14px */
+  transition: all .3s ease-out;
 }
 .postBtnWrap button {
   width: 31.25rem; /* 500px */
@@ -172,76 +173,94 @@ export default {
   letter-spacing: 0.375rem; /* 6px */
   font-size: 0.875rem; /* 14px */
   cursor: pointer;
+  transition: all .3s ease-out;
 }
 .postBtnWrap a:hover {
   background-color: #fff;
   color: #4db7a9;
+  transition: all .3s ease-out;
 }
 .postBtnWrap button:hover {
   background-color: #fff;
   color: #4db7a9;
+  transition: all .3s ease-out;
 }
+/* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #baordPost {
-    width: 350px; /* 350px */
-    min-width: 350px; /* 350px */
-    max-width: 350px; /* 350px */
-    padding: 50px 0 60px 0; /* 50px 0 60px 0 */
+    width: 21.875rem; /* 350px */
+    min-width: 21.875rem; /* 350px */
+    max-width: 21.875rem; /* 350px */
+    padding: 3.125rem 0 3.75rem 0; /* 50px 0 60px 0 */
   }
   .postWrap th {
-    font-size: 12px; /* 12px */
-    padding: 20px 0 20px 0; /* 20px 0 20px 10px */
+    font-size: 0.75rem; /* 12px */
+    padding: 1.25rem 0 1.25rem 0; /* 20px 0 20px 0 */
   }
   .postWrap td {
-    font-size: 13px;
-    padding: 20px 0 20px 0; /* 20px 0 20px 10px */
+    font-size: 0.8125rem; /* 13px */
+    padding: 1.25rem 0 1.25rem 0; /* 20px 0 20px 0 */
   }
   .postWrap .postTitle th {
-    width: 40px; /* 40px */
+    width: 2.5rem; /* 40px */
     padding-left: 0;
   }
   .postWrap .postTitle td {
-    width: 290px; /* 290px */
+    width: 18.125rem; /* 290px */
     padding-left: 0.625rem; /* 10px */
   }
   .postWrap .postInfo th {
-    width: 40px; /* 40px */
+    width: 2.5rem; /* 40px */
     padding-left: 0;
   }
   .postWrap .postInfo td {
-    width: 75px; /* 125px */
+    width: 4.6875rem; /* 75px */
   }
   .postWrap .postInfo td:nth-of-type(1) {
-    width: 75px;
-    padding-left: 10px; /* 40px */
+    width: 4.6875rem; /* 75px */
+    padding-left: 0.625rem; /* 10px */
   }
   .postWrap .postInfo td:nth-of-type(2) {
-    width: 50px; /* 490px */
-    padding-left: 10px; /* 40px */
+    width: 3.125rem; /* 50px */
+    padding-left: 0.625rem; /* 10px */
   }
   .postWrap .postText td {
-    padding: 15px 0; /* 40px 40px */
+    padding: 0.9375rem 0; /* 15px 0 */
     text-align: left;
     line-height: 150%;
-    font-size: 15px;
+    font-size: 0.9375rem; /* 15px */
   }
   .postBtnWrap {
-    margin-top: 50px; /* 70px */
+    margin-top: 3.125rem; /* 50px */
     text-align: center;
     font-size: 0;
   }
   .postBtnWrap a {
-    width: 166px; /* 496px */
-    padding: 19px 0; /* 30.5px 0 */
-    margin-right: 10px; /* 50px */
-    font-size: 16px; /* 16px */
-    letter-spacing: 5px;
+    width: 10.375rem; /* 166px */
+    padding: 1.1875rem 0; /* 19px 0 */
+    margin-right: 0.625rem; /* 10px */
+    font-size: 1rem; /* 16px */
+    letter-spacing: 0.3125rem; /* 5px */
   }
   .postBtnWrap button {
-    width: 170px; /* 500px */
-    height: 60px; /* 80px */
-    font-size: 16px; /* 16px */
-    letter-spacing: 5px;
+    width: 10.625rem; /* 170px */
+    height: 3.75rem; /* 60px */
+    font-size: 1rem; /* 16px */
+    letter-spacing: 0.3125rem; /* 5px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  #baordPost {
+    width: 19.375rem; /* 310px */
+    min-width: 19.375rem; /* 310px */
+    max-width: 19.375rem; /* 310px */
+  }
+  .postBtnWrap a {
+    width: 9.125rem; /* 146px */
+  }
+  .postBtnWrap button {
+    width: 9.375rem; /* 150px */
   }
 }
 </style>

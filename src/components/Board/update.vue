@@ -190,10 +190,12 @@ export default {
   cursor: pointer;
   font-family: gotham_Bold;
   font-size: 1.25rem; /* 20px */
+  transition: all .3s ease-out;
 }
 .saveBtn:hover {
   background-color: #fff;
   color: #4db7a9;
+  transition: all .3s ease-out;
 }
 .btnLine {
   margin: 3.125rem auto; /* 50px auto */
@@ -212,72 +214,93 @@ export default {
   color: #e75735;
   letter-spacing: 0.25rem; /* 4px */
 }
+/* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #baordUpdate {
-    width: 350px; /* 350px */
-    min-width: 350px; /* 350px */
-    max-width: 350px; /* 350px */
-    padding: 50px 0 60px 0; /* 50px 0 60px 0 */
+    width: 21.875rem; /* 350px */
+    min-width: 21.875rem; /* 350px */
+    max-width: 21.875rem; /* 350px */
+    padding: 3.125rem 0 3.75rem 0; /* 50px 0 60px 0 */
   }
   .updateWrap th {
-    padding: 20px 0 20px 0; /* 20px 0 20px 10px */
-    width: 40px; /* 40px */
-    font-size: 12px; /* 12px */
+    padding: 1.25rem 0 1.25rem 0; /* 20px 0 20px 0 */
+    width: 2.5rem; /* 40px */
+    font-size: 0.75rem; /* 12px */
   }
   .updateWrap td {
-    padding: 20px 0 20px 0; /* 20px 0 20px 10px */
-    font-size: 13px; /* 13px */
+    padding: 1.25rem 0 1.25rem 0; /* 20px 0 20px 0 */
+    font-size: 0.8125rem; /* 13px */
   }
   .updateWrap .updateTitle th {
-    width: 40px; /* 40px */
+    width: 2.5rem; /* 40px */
   }
   .updateWrap .updateTitle td {
-    width: 290px; /* 290px */
-    padding-left: 10px; /* 10px */
+    width: 18.125rem; /* 290px */
+    padding-left: 0.625rem; /* 10px */
   }
   .updateWrap .updateTitle td input{
     width: 100%;
     padding: 0.625rem 0 0.625rem 0.625rem; /* 10px 0 10px 10px */
   }
   .updateWrap .updateInfo th {
-    width: 40px; /* 40px */
+    width: 2.5rem; /* 40px */
     padding-left: 0;
   }
   .updateWrap .updateInfo td {
-    width: 75px; /* 125px */
+    width: 4.6875rem; /* 75px */
   }
   .updateWrap .updateInfo td:nth-of-type(1) {
-    width: 75px;
-    padding-left: 10px; /* 40px */
+    width: 4.6875rem; /* 75px */
+    padding-left: 0.625rem; /* 10px */
   }
   .updateWrap .updateInfo td:nth-of-type(2) {
-    width: 50px; /* 490px */
-    padding-left: 10px; /* 40px */
+    width: 3.125rem; /* 50px */
+    padding-left: 0.625rem; /* 10px */
   }
   .updateWrap .updateText td{
-    width: 330px; /* 350px */
-    padding: 10px 0;
+    width: 20.625rem; /* 330px */
+    padding: 0.625rem 0; /* 10px 0 */
   }
   .updateWrap .updateText textarea{
-    width: 318px; /* 300px */
+    width: 19.875rem; /* 318px */
     line-height: 150%;
   }
   .saveBtn {
-    width: 350px; /* 350px */
-    height: 70px; /* 70px */
-    font-size: 16px; /* 16px */
-    margin-top: 50px; /* 100px */
-    letter-spacing: 5px;
+    width: 21.875rem; /* 350px */
+    height: 4.375rem; /* 70px */
+    font-size: 1rem; /* 16px */
+    margin-top: 3.125rem; /* 50px */
+    letter-spacing: 0.3125rem; /* 5px */
   }
   .btnLine {
-    margin: 30px auto; /* 50px auto */
+    margin: 1.875rem auto; /* 30px auto */
   }
   .cancleIcon {
-    width: 14px; /* 15px */
-    height: 15px; /* 16px */
+    width: 0.875rem; /* 14px */
+    height: 0.9375rem; /* 15px */
   }
   .cancleBtn {
-    font-size: 13px; /* 16px */
+    font-size: 0.8125rem; /* 13px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  #baordUpdate {
+    width: 19.375rem; /* 310px */
+    min-width: 19.375rem; /* 310px */
+    max-width: 19.375rem; /* 310px */
+  }
+  .updateWrap .updateTitle td input{
+    width: 95%;
+  }
+  .updateWrap .updateText td{
+    width: 19.375rem; /* 310px */
+  }
+  .updateWrap .updateText textarea{
+    width: 17.5rem; /* 280px */
+  }
+  .saveBtn {
+    width: 19.375rem; /* 310px */
   }
 }
 </style>

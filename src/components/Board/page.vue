@@ -50,12 +50,12 @@ export default {
 }
 @media screen and (max-width: 414px) {
   #listPage {
-    margin-top: 60px; /* 120px */
-    font-size: 15px; /* 16px */
+    margin-top: 3.75rem; /* 60px */
+    font-size: 0.9375rem; /* 15px */
   }
   .clickPageNumColor {
-    font-size: 17px; /* 18px */
-    margin-top: -3px; /* -2.7px */
+    font-size: 1.0625rem; /* 17px */
+    margin-top: -0.1875rem; /* -3px */
   }
 }
 </style>

@@ -106,23 +106,32 @@ export default {
   color: #4f4f4f;
   border-bottom: 0.0625rem solid #e5e5e5; /* 1px */
 }
+/* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #boardList {
-    padding-bottom: 80px; /* 90px */
+    padding-bottom: 5rem; /* 80px */
   }
   .boardListWrap {
-    width: 350px; /* 1100px */
-    min-width: 350px; /* 1100px */
-    max-width: 350px; /* 1100px */
+    width: 21.875rem; /* 350px */
+    min-width: 21.875rem; /* 350px */
+    max-width: 21.875rem; /* 350px */
   }
   .boardListWrap th {
-    font-size: 10px; /* 16px */
-    padding: 30px 0 10px 0.625rem; /* 20px 0 20px 10px */
+    font-size: 0.625rem; /* 10px */
+    padding: 1.875rem 0 0.625rem 0.625rem; /* 30px 0 10px 10px */
   }
   .boardListWrap td {
-    padding: 20px 0 20px 0.625rem; /* 30px 0 30px 10px */
-    font-size: 12px; /* 16px */
+    padding: 1.25rem 0 1.25rem 0.625rem; /* 20px 0 20px 10px */
+    font-size: 0.75rem; /* 12px */
     line-height: 150%;
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  .boardListWrap {
+    width: 19.375rem; /* 310px */
+    min-width: 19.375rem; /* 310px */
+    max-width: 19.375rem; /* 310px */
   }
 }
 </style>

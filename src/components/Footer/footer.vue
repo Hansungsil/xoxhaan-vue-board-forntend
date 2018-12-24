@@ -18,6 +18,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #allFooter {
+  width: 100%;
   height: 6.25rem; /* 100px */
   background-color: #e5e5e5;
   text-align: center;
@@ -31,14 +32,14 @@ address {
 }
 @media screen and (max-width: 414px) {
   #allFooter {
-    height: 60px; /* 60px */
-    font-size: 10px;
+    height: 3.75rem; /* 60px */
+    font-size: 0.625rem; /* 10px */
   }
   footer {
-    padding-top: 17px; /* 17px */
+    padding-top: 1.0625rem; /* 17px */
   }
   address {
-    padding-top: 5px; /* 5px */
+    padding-top: 0.3125rem; /* 5px */
   }
 }
 </style>

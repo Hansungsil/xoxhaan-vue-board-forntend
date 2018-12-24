@@ -253,8 +253,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #boardWrap {
+  width: 100%;
   text-align: center;
-  font-size:0;
+  font-size: 0;
 }
 .writeBtn {
   margin: 1.25rem 0 3.125rem 61.875rem; /* 20px 0 50px 990px */
@@ -267,18 +268,27 @@ export default {
   font-family: gotham_Medium;
   font-size: 0.875rem; /* 14px */
   cursor: pointer;
+  transition: all .3s ease-out;
 }
 .writeBtn:hover {
   background-color: #4db7a9;
   color: #fff;
+  transition: all .3s ease-out;
 }
+/* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   .writeBtn {
-    margin: 10px 0 10px 270px; /* 10px 0 10px 270px */
-    width: 80px; /* 80px */
-    height: 30px; /* 30px */
+    margin: 0.625rem 0 0.625rem 16.875rem; /* 10px 0 10px 270px */
+    width: 5rem; /* 80px */
+    height: 1.875rem; /* 30px */
     font-family: gotham_Bold;
-    font-size: 12px; /* 12px */
+    font-size: 0.75rem; /* 12px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  .writeBtn {
+    margin: 0.625rem 0 0.625rem 14.375rem; /* 10px 0 10px 270px */
   }
 }
 </style>

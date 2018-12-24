@@ -1,17 +1,27 @@
 <template>
   <div id="login">
-    <p class="subTitle">SIGN IN</p>
+    <transition name="subTitleShow" appear>
+      <p class="subTitle">SIGN IN</p>
+    </transition>
     <form @submit.prevent="login" action="post" class="loginForm">
-      <label for="id">
-        <font-awesome-icon :icon="['far', 'envelope']" class="loginIcon"/>
-        <input type="text" v-model="id" id="id">
-      </label>
-      <label for="pw">
-        <font-awesome-icon icon="lock" class="pwIcon"/>
-        <input type="password" v-model="pw" id="pw">
-      </label>
-      <button type="submit" class="loginBtn">LOGIN</button>
-      <router-link to='/join' class="joinBtn">JOIN</router-link>
+      <transition name="keyupShow" appear>
+        <label for="id">
+          <font-awesome-icon :icon="['far', 'envelope']" class="loginIcon"/>
+          <input type="text" v-model="id" id="id">
+        </label>
+      </transition>
+      <transition name="keyupShow" appear>
+        <label for="pw">
+          <font-awesome-icon icon="lock" class="pwIcon"/>
+          <input type="password" v-model="pw" id="pw">
+        </label>
+      </transition>
+      <transition name="btnShow" appear>
+        <button type="submit" class="loginBtn">LOGIN</button>
+      </transition>
+      <transition name="btnShow" appear>
+        <router-link to='/join' class="joinBtn">JOIN</router-link>
+      </transition>
     </form>
   </div>
 </template>
@@ -123,10 +133,12 @@ export default {
   font-size: 1.25rem; /* 20px */
   cursor: pointer;
   letter-spacing: 0.3125rem; /* 5px */
+  transition: all .3s ease-out;
 }
 .loginBtn:hover {
   background-color: #fff;
   color: #4db7a9;
+  transition: all .3s ease-out;
 }
 .joinBtn {
   margin: 0 auto;
@@ -142,11 +154,36 @@ export default {
   font-size: 1.25rem; /* 20px */
   cursor: pointer;
   letter-spacing: 0.3125rem; /* 5px */
+  transition: all .3s ease-out;
 }
 .joinBtn:hover {
   background-color: #fff;
   color: #4db7a9;
+  transition: all .3s ease-out;
 }
+/* transitions */
+.subTitleShow-enter-active {
+  transition: all 1s;
+}
+.subTitleShow-enter {
+  opacity: 0;
+  transform: translateY(10px)
+}
+.keyupShow-enter-active {
+  transition: all 1s linear .5s;
+}
+.keyupShow-enter {
+  opacity: 0;
+  transform: translateY(10px)
+}
+.btnShow-enter-active {
+  transition: all 1s linear 1s;
+}
+.btnShow-enter {
+  opacity: 0;
+  transform: translateY(20px)
+}
+/* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #login {
     padding: 4.375rem 0 0 0; /* 70px 0 0 0 */
@@ -181,6 +218,21 @@ export default {
     width: 21.625rem; /* 346px */
     padding: 1.5rem 0; /* 24px 0 */
     font-size: 1rem; /* 16px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  .loginForm label {
+    width: 18.75rem; /* 300px */
+  }
+  .loginForm label input {
+    width: 10.625rem; /* 170px */
+  }
+  .loginBtn {
+    width: 18.75rem; /* 300px */
+  }
+  .joinBtn {
+    width: 18.5rem; /* 296px */
   }
 }
 </style>
