@@ -155,7 +155,7 @@ export default {
     padding-bottom: 3.125rem; /* 50px */
   }
   .logo{
-    padding: 3.125rem 0 4.375rem 0; /* 50px 0 70px 0 */
+    padding: 4.0625rem 0 4.375rem 0; /* 65px 0 70px 0 */
     font-size: 3.125rem; /* 50px */
   }
   .logo p:first-child {

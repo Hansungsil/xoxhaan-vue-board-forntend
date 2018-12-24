@@ -11,7 +11,7 @@
         </label>
       </transition>
       <transition name="idKeyupShow" appear>
-        <button @click.prevent="userCheck" id="idCheck" class="doubleCheck">Email Check</button>
+        <button @click.prevent="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
       </transition>
       <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
         {{ IDvalidateText }}
@@ -41,7 +41,7 @@
         </label>
       </transition>
       <transition name="nameKeyupShow" appear>
-        <button @click.prevent="userCheck" id="nameCheck" class="doubleCheck">Name Check</button>
+        <button @click.prevent="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
       </transition>
       <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
         {{ NAMEvalidateText }}
@@ -204,7 +204,7 @@ export default {
       this.userCheckSuccess = ''
     },
     // ID, NAME 중복 체크
-    userCheck (event) {
+    userDuplicateCheck (event) {
       console.log(event)
       const userCheck = event.path['0'].id
       const userLength = event.target.previousElementSibling.control.value

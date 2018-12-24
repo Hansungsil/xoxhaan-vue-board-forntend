@@ -135,7 +135,7 @@ export default {
     display: block;
   }
   .loginWrap {
-    margin: -65px 0 1.875rem auto; /* -60px 0 30px auto */
+    margin: -3.75rem 0 1.875rem auto; /* -60px 0 30px auto */
     min-width: 25.875rem; /* 414px */
   }
   .userName {
