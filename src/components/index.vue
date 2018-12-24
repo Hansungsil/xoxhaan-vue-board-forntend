@@ -119,11 +119,11 @@ export default {
 /* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #firstMain {
-    padding-bottom: 3.125rem; /* 50px */
+    padding-bottom: 0;
   }
   /* 싸이즈 기준: 16px */
   .logo{
-    padding: 6.875rem 0 5.3125rem 0; /* 110px 0 85px 0 */
+    padding: 6.875rem 0 4.375rem 0; /* 110px 0 70px 0 */
     font-size: 3.75rem; /* 60px */
   }
   .logo p:first-child {
@@ -139,7 +139,7 @@ export default {
   }
   /* 싸이즈 기준: 16px */
   .nav {
-    padding-bottom: 6.875rem; /* 110px */
+    padding-bottom: 0;
   }
   .nav ul li {
     margin-bottom: 0.625rem; /* 10px */
@@ -150,6 +150,49 @@ export default {
     width: 16.8125rem; /* 296px  border: 2px */
     padding: 1.59375rem 0; /* 25.5px 0  border: 2px */
     font-size: 1.4375rem; /* 23px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 375px) {
+  .logo{
+    padding: 5.625rem 0 4.375rem 0; /* 90px 0 70px 0 */
+    font-size: 3.125rem; /* 50px */
+  }
+  .logo p:first-child {
+    font-size: 1.875rem; /* 30px */
+  }
+  .logoCenterLine {
+    height: 0.3125rem; /* 5px */
+  }
+  .logo p:last-child {
+    margin-top: 3.125rem; /* 50px */
+  }
+  .nav ul li a {
+    width: 15.375rem; /* 246px  border: 2px */
+    padding: 1.25rem 0; /* 20px 0  border: 2px */
+    font-size: 1.25rem; /* 20px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  .logo{
+    padding: 4.375rem 0 3.75rem 0; /* 70px 0 60px 0 */
+    font-size: 2.8125rem; /* 45px */
+  }
+  .logo p:first-child {
+    font-size: 1.875rem; /* 30px */
+    margin-bottom: 2.1875rem; /* 35px */
+  }
+  .logoCenterLine {
+    height: 0.25rem; /* 4px */
+  }
+  .logo p:last-child {
+    margin-top: 2.1875rem; /* 35px */
+  }
+  .nav ul li a {
+    width: 12.25rem; /* 196px  border: 2px */
+    padding: 1.125rem 0; /* 18px 0  border: 2px */
+    font-size: 1.125rem; /* 18px */
   }
 }
 </style>
