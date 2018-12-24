@@ -416,13 +416,13 @@ export default {
 /* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #join {
-    padding: 4.375rem 0 6.25rem 0; /* 70px 0 100px 0 */
+    padding: 2.5rem 0 6.25rem 0; /* 40px 0 100px 0 */
   }
   .subTitle {
     font-size: 2.1875rem; /* 35px */
   }
   .joinForm {
-    margin-top: 3.75rem; /* 60px */
+    margin-top: 2.5rem; /* 40px */
   }
   .joinForm label {
     display: block;

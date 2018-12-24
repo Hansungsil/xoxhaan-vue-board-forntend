@@ -167,32 +167,32 @@ export default {
 }
 .subTitleShow-enter {
   opacity: 0;
-  transform: translateY(10px)
+  transform: translateY(0.625rem) /* 10px */
 }
 .keyupShow-enter-active {
   transition: all 1s linear .5s;
 }
 .keyupShow-enter {
   opacity: 0;
-  transform: translateY(10px)
+  transform: translateY(0.625rem) /* 10px */
 }
 .btnShow-enter-active {
   transition: all 1s linear 1s;
 }
 .btnShow-enter {
   opacity: 0;
-  transform: translateY(20px)
+  transform: translateY(1.25rem) /* 20px */
 }
 /* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #login {
-    padding: 4.375rem 0 0 0; /* 70px 0 0 0 */
+    padding: 2.5rem 0 0 0; /* 40px 0 0 0 */
   }
   .subTitle {
     font-size: 2.1875rem; /* 35px */
   }
   .loginForm {
-    margin-top: 3.75rem; /* 60px */
+    margin-top: 1.25rem; /* 20px */
   }
   .loginForm label {
     width: 21.875rem; /* 350px */

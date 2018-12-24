@@ -121,11 +121,11 @@ export default {
 @media screen and (max-width: 414px) {
   #allHeader {
     /* 총 height: 85px */
-    padding: 0.625rem 0 1.25rem 0; /* 10px 0 20px 0 (p태그에 상, 하 2px 씩 추가됨)*/
+    padding: 0.3125rem 0 1.5625rem 0; /* 5px 0 20px 0 (p태그에 상, 하 2px 씩 추가됨)*/
   }
   #allHeader p {
     width: 6.9375rem; /* 111px */
-    margin: 0.625rem 0 0 1.25rem; /* 10px 0 0 20px */
+    margin: 0.9375rem 0 0 1.25rem; /* 10px 0 0 20px */
     text-align: left;
     overflow: visible;
     font-size: 1.4375rem; /* 23px */
@@ -135,7 +135,7 @@ export default {
     display: block;
   }
   .loginWrap {
-    margin: -3.75rem 0 1.875rem auto; /* -60px 0 30px auto */
+    margin: -65px 0 1.875rem auto; /* -60px 0 30px auto */
     min-width: 25.875rem; /* 414px */
   }
   .userName {
@@ -147,7 +147,7 @@ export default {
     height: 1.875rem; /* 30px */
     font-family: gotham_Bold;
     font-size: 0.75rem; /* 12px */
-    margin-right: 0.625rem; /* 10px */
+    margin-right: 0.3125rem; /* 5px */
   }
 }
 /* iphone 6/7/8 */

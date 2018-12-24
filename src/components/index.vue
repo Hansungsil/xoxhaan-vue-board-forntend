@@ -100,49 +100,46 @@ export default {
 }
 .logoShow-enter {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(1.875rem); /* 30px */
 }
 .loginBtnShow-enter-active {
   transition: all 1s ease 1s;
 }
 .loginBtnShow-enter {
   opacity: 0;
-  transform: translateY(0.9375rem); /* 30px */
+  transform: translateY(1.875rem); /* 30px */
 }
 .boardBtnShow-enter-active {
   transition: all 1s ease 1.5s;
 }
 .boardBtnShow-enter {
   opacity: 0;
-  transform: translateY(0.9375rem); /* 30px */
+  transform: translateY(1.875rem); /* 30px */
 }
 /* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #firstMain {
-    padding-bottom: 0;
+    padding-bottom: 3.125rem; /* 50px*/
   }
   /* 싸이즈 기준: 16px */
   .logo{
-    padding: 6.875rem 0 4.375rem 0; /* 110px 0 70px 0 */
-    font-size: 3.75rem; /* 60px */
+    padding: 3.125rem 0 4.375rem 0; /* 50px 0 70px 0 */
+    font-size: 3.125rem; /* 50px */
   }
   .logo p:first-child {
-    font-size: 2.5rem; /* 40px */
-    margin-bottom: 2.8125rem; /* 45px */
+    font-size: 1.875rem; /* 30px */
+    margin-bottom: 1.875rem; /* 30px */
   }
   .logoCenterLine {
     width: 1.375rem; /* 22px */
     height: 0.4375rem; /* 7px */
   }
   .logo p:last-child {
-    margin-top: 3.1875rem; /* 51px */
+    margin-top: 1.875rem; /* 30px */
   }
   /* 싸이즈 기준: 16px */
   .nav {
     padding-bottom: 0;
-  }
-  .nav ul li {
-    margin-bottom: 0.625rem; /* 10px */
   }
   .nav ul li a {
     margin: 0 auto;
@@ -152,10 +149,13 @@ export default {
     font-size: 1.4375rem; /* 23px */
   }
 }
-/* iphone 5/SE */
+/* iphone 6/7/8 */
 @media screen and (max-width: 375px) {
+  #firstMain {
+    padding-bottom: 3.125rem; /* 50px */
+  }
   .logo{
-    padding: 5.625rem 0 4.375rem 0; /* 90px 0 70px 0 */
+    padding: 3.125rem 0 4.375rem 0; /* 50px 0 70px 0 */
     font-size: 3.125rem; /* 50px */
   }
   .logo p:first-child {
@@ -163,9 +163,6 @@ export default {
   }
   .logoCenterLine {
     height: 0.3125rem; /* 5px */
-  }
-  .logo p:last-child {
-    margin-top: 3.125rem; /* 50px */
   }
   .nav ul li a {
     width: 15.375rem; /* 246px  border: 2px */
@@ -175,6 +172,9 @@ export default {
 }
 /* iphone 5/SE */
 @media screen and (max-width: 320px) {
+  #firstMain {
+    padding-bottom: 3.125rem; /* 50px*/
+  }
   .logo{
     padding: 4.375rem 0 3.75rem 0; /* 70px 0 60px 0 */
     font-size: 2.8125rem; /* 45px */

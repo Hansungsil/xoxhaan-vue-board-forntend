@@ -118,7 +118,7 @@ export default {
     border-bottom-right-radius: 0;
   }
   .searchBtn {
-    vertical-align: -0.5rem; /* -8px */
+    vertical-align: -7px; /* -8px */
     width: 1.875rem; /* 30px */
     height: 2rem; /* 32px */
     border-top: 0;

@@ -6,8 +6,8 @@
           <th>No</th>
           <th>Title</th>
           <th>Writer</th>
-          <th>Date</th>
           <th>Views</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
