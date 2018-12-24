@@ -103,6 +103,7 @@ export default {
     border-top-left-radius: 1.25rem; /* 20px */
     border-top-right-radius: 1.25rem; /* 20px */
     border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
     font-size: 0.875rem; /* 14px */
     padding-right: 1.0625rem; /* 17px */
     font-family: YDIYGO120;
@@ -113,6 +114,8 @@ export default {
     padding: 0 0.625rem; /* 0 10px */
     border-top: 0;
     border-bottom: 0.125rem solid #4db7a9; /* 2px */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .searchBtn {
     vertical-align: -0.5rem; /* -8px */
