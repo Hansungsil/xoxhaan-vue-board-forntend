@@ -208,7 +208,7 @@ export default {
       console.log(event)
       const userCheck = event.path['0'].id
       const userLength = event.target.previousElementSibling.control.value
-      alert(userCheck, userLength)
+      alert(userCheck + userLength)
       if (userCheck === 'idCheck') {
         this.userColumn = 'uid'
         this.userText = this.id
