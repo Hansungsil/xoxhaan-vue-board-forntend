@@ -11,7 +11,7 @@
         </label>
       </transition>
       <transition name="idKeyupShow" appear>
-        <button @click.prevent="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
+        <button @click.prevent="userDuplicateCheck" v-touch:tap="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
       </transition>
       <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
         {{ IDvalidateText }}
@@ -41,7 +41,7 @@
         </label>
       </transition>
       <transition name="nameKeyupShow" appear>
-        <button @click.prevent="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
+        <button @click.prevent="userDuplicateCheck" v-touch:tap="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
       </transition>
       <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
         {{ NAMEvalidateText }}
