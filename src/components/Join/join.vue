@@ -221,6 +221,8 @@ export default {
     // ID, NAME 중복 체크
     userDuplicateCheck (event) {
       // console.log(event)
+      alert(event.path['0'].id)
+      alert(event.target.previousElementSibling.control.value)
       this.userCheck = event.path['0'].id
       this.userLength = event.target.previousElementSibling.control.value
       if (this.userCheck === 'idCheck') {
@@ -231,7 +233,7 @@ export default {
         this.userText = this.name
       }
       if (this.userLength.length === 0) {
-        alert('입력 하세요')
+        alert('입력 하세요.')
       } else if (this.userLength.length !== 0 && this.success === 1) {
         this.$http.get(`/api/login/${this.userCheck}`, {
           params: {
