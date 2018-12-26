@@ -11,7 +11,7 @@
         </label>
       </transition>
       <transition name="idKeyupShow" appear>
-        <button @click.prevent="userDuplicateCheck" v-touch:tap="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
+        <button @click.prevent="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
       </transition>
       <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
         {{ IDvalidateText }}
@@ -41,7 +41,7 @@
         </label>
       </transition>
       <transition name="nameKeyupShow" appear>
-        <button @click.prevent="userDuplicateCheck" v-touch:tap="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
+        <button @click.prevent="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
       </transition>
       <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
         {{ NAMEvalidateText }}
@@ -206,9 +206,9 @@ export default {
     // ID, NAME 중복 체크
     userDuplicateCheck (event) {
       console.log(event)
-      alert('test')
       const userCheck = event.path['0'].id
       const userLength = event.target.previousElementSibling.control.value
+      alert(userCheck, userLength)
       if (userCheck === 'idCheck') {
         this.userColumn = 'uid'
         this.userText = this.id
@@ -230,22 +230,26 @@ export default {
                 this.resultSuccess = false
                 this.resultFail = true
                 this.IDvalidateText = response.data.text
+                alert(response.data.text)
               } else {
                 this.resultSuccess = true
                 this.resultFail = false
                 this.IDvalidateText = response.data.text
                 this.IDCheckSuccess = 'idCheckOK'
+                alert(response.data.text)
               }
             } else {
               if (response.data.resultLength >= 1) {
                 this.resultSuccess = false
                 this.resultFail = true
                 this.NAMEvalidateText = response.data.text
+                alert(response.data.text)
               } else {
                 this.resultSuccess = true
                 this.resultFail = false
                 this.NAMEvalidateText = response.data.text
                 this.NAMECheckSuccess = 'nameCheckOK'
+                alert(response.data.text)
               }
             }
           })
