@@ -192,7 +192,7 @@ export default {
     font-size: 2.1875rem; /* 35px */
   }
   .loginForm {
-    margin-top: 1.25rem; /* 20px */
+    margin-top: 2.5rem; /* 40px */
   }
   .loginForm label {
     width: 21.875rem; /* 350px */

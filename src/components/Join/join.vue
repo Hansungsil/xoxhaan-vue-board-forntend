@@ -224,14 +224,28 @@ export default {
         })
           .then(response => {
             console.log(response)
-            this.resultSuccess = true
-            this.resultFail = false
             if (response.data.column === 'uid') {
-              this.IDvalidateText = response.data.text
-              this.IDCheckSuccess = 'idCheckOK'
+              if (response.data.resultLength >= 1) {
+                this.resultSuccess = false
+                this.resultFail = true
+                this.IDvalidateText = response.data.text
+              } else {
+                this.resultSuccess = true
+                this.resultFail = false
+                this.IDvalidateText = response.data.text
+                this.IDCheckSuccess = 'idCheckOK'
+              }
             } else {
-              this.NAMEvalidateText = response.data.text
-              this.NAMECheckSuccess = 'nameCheckOK'
+              if (response.data.resultLength >= 1) {
+                this.resultSuccess = false
+                this.resultFail = true
+                this.NAMEvalidateText = response.data.text
+              } else {
+                this.resultSuccess = true
+                this.resultFail = false
+                this.NAMEvalidateText = response.data.text
+                this.NAMECheckSuccess = 'nameCheckOK'
+              }
             }
           })
           .catch(error => {
@@ -448,11 +462,9 @@ export default {
     line-height: 140%;
   }
   .joinForm .outputSuccess {
-    color: #546cff;
     height: 2.1875rem; /* 35px */
   }
   .joinForm .outputFail {
-    color: #ff5454;
     height: 2.1875rem; /* 35px */
   }
   .joinForm output:nth-of-type(2) {
