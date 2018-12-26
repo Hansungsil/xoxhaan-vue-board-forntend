@@ -25,8 +25,7 @@
     "vue-cookie": "^1.1.4",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",
-    "vue-session": "^1.0.0",
-    "vue2-touch-events": "^1.1.1"
+    "vue-session": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
