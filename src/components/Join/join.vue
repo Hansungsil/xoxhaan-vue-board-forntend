@@ -11,7 +11,7 @@
         </label>
       </transition>
       <transition name="idKeyupShow" appear>
-        <input type="button" @click.prevent="userDuplicateCheck" id="idCheck" class="doubleCheck" value="Email Check">
+        <button @click.prevent="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
       </transition>
       <output class="validateText" :class="{'idOutputSuccess': idResultSuccess, 'idOutputFail': idResultFail}">
         {{ IDvalidateText }}
@@ -41,7 +41,7 @@
         </label>
       </transition>
       <transition name="nameKeyupShow" appear>
-        <input type="button" @click.prevent="userDuplicateCheck" id="nameCheck" class="doubleCheck" value="Name Check">
+        <button @click.prevent="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
       </transition>
       <output class="validateText" :class="{'nameOutputSuccess': nameResultSuccess, 'nameOutputFail': nameResultFail}">
         {{ NAMEvalidateText }}
@@ -90,10 +90,8 @@ export default {
       pwchResultSuccess: false,
       pwchResultFail: false,
       nameResultSuccess: false,
-      nameResultFail: false,
-      // output class end
-      userCheck: '',
-      userLength: ''
+      nameResultFail: false
+      // ===================
     }
   },
   methods: {
@@ -219,23 +217,20 @@ export default {
       this.userCheckSuccess = ''
     },
     // ID, NAME 중복 체크
-    userDuplicateCheck (event) {
-      // console.log(event)
-      alert(event.path['0'].id)
-      alert(event.target.previousElementSibling.control.value)
-      this.userCheck = event.path['0'].id
-      this.userLength = event.target.previousElementSibling.control.value
-      if (this.userCheck === 'idCheck') {
+    userDuplicateCheck (e) {
+      var userCheck = e.target.id
+      var userLength = e.target.previousElementSibling.children[1].value
+      if (userCheck === 'idCheck') {
         this.userColumn = 'uid'
         this.userText = this.id
       } else {
         this.userColumn = 'name'
         this.userText = this.name
       }
-      if (this.userLength.length === 0) {
+      if (userLength.length === 0) {
         alert('입력 하세요.')
-      } else if (this.userLength.length !== 0 && this.success === 1) {
-        this.$http.get(`/api/login/${this.userCheck}`, {
+      } else if (userLength.length !== 0 && this.success === 1) {
+        this.$http.get(`/api/login/${userCheck}`, {
           params: {
             userColumn: this.userColumn,
             userText: this.userText
@@ -273,8 +268,6 @@ export default {
       } else {
         return false
       }
-      this.userCheck = ''
-      this.userLength = ''
       this.success = 0
     }
   }
