@@ -206,9 +206,10 @@ export default {
     // ID, NAME 중복 체크
     userDuplicateCheck (event) {
       console.log(event)
+      alert('test1')
       const userCheck = event.path['0'].id
       const userLength = event.target.previousElementSibling.control.value
-      alert('test')
+      alert('test2')
       alert(userCheck + userLength)
       if (userCheck === 'idCheck') {
         this.userColumn = 'uid'
