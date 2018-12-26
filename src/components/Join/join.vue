@@ -205,8 +205,8 @@ export default {
     },
     // ID, NAME 중복 체크
     userDuplicateCheck (event) {
-      console.log(event)
-      alert('test1')
+      // console.log(event)
+      alert(event)
       var userCheck = event.path['0'].id
       var userLength = event.target.previousElementSibling.control.value
       alert('test2')
@@ -226,7 +226,7 @@ export default {
           }
         })
           .then(response => {
-            console.log(response)
+            // console.log(response)
             if (response.data.column === 'uid') {
               if (response.data.resultLength >= 1) {
                 this.resultSuccess = false
