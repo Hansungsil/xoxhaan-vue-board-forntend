@@ -207,8 +207,8 @@ export default {
     userDuplicateCheck (event) {
       console.log(event)
       alert('test1')
-      const userCheck = event.path['0'].id
-      const userLength = event.target.previousElementSibling.control.value
+      var userCheck = event.path['0'].id
+      var userLength = event.target.previousElementSibling.control.value
       alert('test2')
       alert(userCheck + userLength)
       if (userCheck === 'idCheck') {
