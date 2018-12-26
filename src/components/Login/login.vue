@@ -7,13 +7,13 @@
       <transition name="keyupShow" appear>
         <label for="id">
           <font-awesome-icon :icon="['far', 'envelope']" class="loginIcon"/>
-          <input type="text" v-model="id" id="id">
+          <input type="text" v-model="id" id="id" placeholder="a@aaa.com">
         </label>
       </transition>
       <transition name="keyupShow" appear>
         <label for="pw">
           <font-awesome-icon icon="lock" class="pwIcon"/>
-          <input type="password" v-model="pw" id="pw">
+          <input type="password" v-model="pw" id="pw" placeholder="111111a!">
         </label>
       </transition>
       <transition name="btnShow" appear>
