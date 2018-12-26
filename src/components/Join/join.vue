@@ -11,9 +11,9 @@
         </label>
       </transition>
       <transition name="idKeyupShow" appear>
-        <button @click="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
+        <button type="button" @click="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
       </transition>
-      <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
+      <output class="validateText" :class="{'idOutputSuccess': idResultSuccess, 'idOutputFail': idResultFail}">
         {{ IDvalidateText }}
       </output>
       <transition name="pwKeyupShow" appear>
@@ -41,9 +41,9 @@
         </label>
       </transition>
       <transition name="nameKeyupShow" appear>
-        <button @click="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
+        <button type="button" @click="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
       </transition>
-      <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
+      <output class="validateText" :class="{'nameOutputSuccess': nameResultSuccess, 'nameOutputFail': nameResultFail}">
         {{ NAMEvalidateText }}
       </output>
       <transition name="btnShow" appear>
@@ -79,11 +79,15 @@ export default {
       PW1validateText: '',
       PW2validateText: '',
       NAMEvalidateText: '',
-      success: '',
+      success: 0,
       IDCheckSuccess: '',
       NAMECheckSuccess: '',
       resultSuccess: false,
-      resultFail: false
+      resultFail: false,
+      idResultSuccess: false,
+      idResultFail: false,
+      nameResultSuccess: false,
+      nameResultFail: false,
     }
   },
   methods: {
@@ -94,7 +98,7 @@ export default {
 
       if (reg.test(idText)) {
         this.IDvalidateText = ''
-        this.success = 'success'
+        this.success = 1
       } else if (idText === '') {
         this.IDvalidateText = ''
       } else if (!reg.test(idText)) {
@@ -142,7 +146,7 @@ export default {
 
       if (reg.test(nameText)) {
         this.NAMEvalidateText = ''
-        this.success = 'success'
+        this.success = 1
       } else if (nameText === '') {
         this.NAMEvalidateText = ''
       } else if (!reg.test(nameText)) {
@@ -206,8 +210,8 @@ export default {
     // ID, NAME 중복 체크
     userDuplicateCheck (event) {
       // console.log(event)
-      const userCheck = event.path['0'].id
-      const userLength = event.target.previousElementSibling.control.value
+      var userCheck = event.path['0'].id
+      var userLength = event.target.previousElementSibling.control.value
       if (userCheck === 'idCheck') {
         this.userColumn = 'uid'
         this.userText = this.id
@@ -215,7 +219,7 @@ export default {
         this.userColumn = 'name'
         this.userText = this.name
       }
-      if (userLength.length !== 0 && this.success === 'success') {
+      if (userLength.length !== 0 && this.success === 1) {
         this.$http.get(`/api/login/${userCheck}`, {
           params: {
             userColumn: this.userColumn,
@@ -226,23 +230,23 @@ export default {
             // console.log(response)
             if (response.data.column === 'uid') {
               if (response.data.resultLength >= 1) {
-                this.resultSuccess = false
-                this.resultFail = true
+                this.idResultSuccess = false
+                this.idResultFail = true
                 this.IDvalidateText = response.data.text
               } else {
-                this.resultSuccess = true
-                this.resultFail = false
+                this.idResultSuccess = true
+                this.idResultFail = false
                 this.IDvalidateText = response.data.text
                 this.IDCheckSuccess = 'idCheckOK'
               }
             } else {
               if (response.data.resultLength >= 1) {
-                this.resultSuccess = false
-                this.resultFail = true
+                this.nameResultSuccess = false
+                this.nameResultFail = true
                 this.NAMEvalidateText = response.data.text
               } else {
-                this.resultSuccess = true
-                this.resultFail = false
+                this.nameResultSuccess = true
+                this.nameResultFail = false
                 this.NAMEvalidateText = response.data.text
                 this.NAMECheckSuccess = 'nameCheckOK'
               }
@@ -254,7 +258,7 @@ export default {
       } else {
         return false
       }
-      this.success = ''
+      this.success = 0
     }
   }
 }
@@ -303,6 +307,18 @@ export default {
   color: #546cff;
 }
 .joinForm .outputFail {
+  color: #ff5454;
+}
+.joinForm .idOutputSuccess {
+  color: #546cff;
+}
+.joinForm .idOutputFail {
+  color: #ff5454;
+}
+.joinForm .nameOutputSuccess {
+  color: #546cff;
+}
+.joinForm .nameOutputFail {
   color: #ff5454;
 }
 .joinForm label input {
@@ -465,6 +481,18 @@ export default {
     height: 2.1875rem; /* 35px */
   }
   .joinForm .outputFail {
+    height: 2.1875rem; /* 35px */
+  }
+  .joinForm .idOutputSuccess {
+    height: 2.1875rem; /* 35px */
+  }
+  .joinForm .idOutputFail {
+    height: 2.1875rem; /* 35px */
+  }
+  .joinForm .nameOutputSuccess {
+    height: 2.1875rem; /* 35px */
+  }
+  .joinForm .nameOutputFail {
     height: 2.1875rem; /* 35px */
   }
   .joinForm output:nth-of-type(2) {
