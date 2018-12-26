@@ -60,7 +60,7 @@ export default {
             this.$eventBus.$emit('userNameEventBus', this.userName) // header.vue
             this.id = ''
             this.pw = ''
-            // 이렇게하면 이름이 'id'이고 값이 'id'인 쿠키 설정죔. 하루 만료 됨
+            // 이렇게하면 이름이 'id'이고 값이 'id'인 쿠키 설정됨. 하루 만료 됨
             this.$cookie.set('id', id, 1)
             this.$cookie.set('uid', uid, 1)
             this.$cookie.set('userName', this.userName, 1)

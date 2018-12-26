@@ -11,7 +11,7 @@
         </label>
       </transition>
       <transition name="idKeyupShow" appear>
-        <button type="button" @click="userDuplicateCheck" id="idCheck" class="doubleCheck">Email Check</button>
+        <input type="button" @click.prevent="userDuplicateCheck" id="idCheck" class="doubleCheck" value="Email Check">
       </transition>
       <output class="validateText" :class="{'idOutputSuccess': idResultSuccess, 'idOutputFail': idResultFail}">
         {{ IDvalidateText }}
@@ -22,7 +22,7 @@
           <input type="password" v-model="pw1" id="pw1" required @keyup="pw1Validate" minlength="6" maxlength="20">
         </label>
       </transition>
-      <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
+      <output class="validateText" :class="{'pwOutputSuccess': pwResultSuccess, 'pwOutputFail': pwResultFail}">
         {{ PW1validateText }}
       </output>
       <transition name="pwKeyupShow" appear>
@@ -31,7 +31,7 @@
           <input type="password" v-model="pw2" id="pw2" required @keyup="pw2Validate" minlength="6" maxlength="20">
         </label>
       </transition>
-      <output class="validateText" :class="{'outputSuccess': resultSuccess, 'outputFail': resultFail}">
+      <output class="validateText" :class="{'pwchOutputSuccess': pwchResultSuccess, 'pwchOutputFail': pwchResultFail}">
         {{ PW2validateText }}
       </output>
       <transition name="nameKeyupShow" appear>
@@ -41,7 +41,7 @@
         </label>
       </transition>
       <transition name="nameKeyupShow" appear>
-        <button type="button" @click="userDuplicateCheck" id="nameCheck" class="doubleCheck">Name Check</button>
+        <input type="button" @click.prevent="userDuplicateCheck" id="nameCheck" class="doubleCheck" value="Name Check">
       </transition>
       <output class="validateText" :class="{'nameOutputSuccess': nameResultSuccess, 'nameOutputFail': nameResultFail}">
         {{ NAMEvalidateText }}
@@ -82,12 +82,18 @@ export default {
       success: 0,
       IDCheckSuccess: '',
       NAMECheckSuccess: '',
-      resultSuccess: false,
-      resultFail: false,
+      // output class start
       idResultSuccess: false,
       idResultFail: false,
+      pwResultSuccess: false,
+      pwResultFail: false,
+      pwchResultSuccess: false,
+      pwchResultFail: false,
       nameResultSuccess: false,
       nameResultFail: false,
+      // output class end
+      userCheck: '',
+      userLength: ''
     }
   },
   methods: {
@@ -103,7 +109,7 @@ export default {
         this.IDvalidateText = ''
       } else if (!reg.test(idText)) {
         this.IDvalidateText = '이메일 형식이 올바르지 않습니다.'
-        this.resultFail = true
+        this.idResultFail = true
         return false
       }
     },
@@ -114,12 +120,15 @@ export default {
 
       if (reg.test(pw1Text)) {
         this.PW1validateText = ''
-        this.resultFail = false
+        this.pwResultSuccess = true
+        this.pwResultFail = false
       } else if (pw1Text === '') {
         this.PW1validateText = ''
+        this.PW2validateText = '비밀번호를 입력해 주세요.'
+        this.pwchResultFail = true
       } else if (!reg.test(pw1Text)) {
         this.PW1validateText = '최소 8자리, 최대 20자리 숫자, 문자, 특수문자 각각 1개 이상 포함해야 합니다.'
-        this.resultFail = true
+        this.pwResultFail = true
         return false
       }
     },
@@ -128,15 +137,17 @@ export default {
       let pw1Text = document.getElementById('pw1').value
       let pw2Text = document.getElementById('pw2').value
 
-      if (pw2Text === '') {
+      if (pw1Text === '') {
+        document.getElementById('pw1').focus()
+      } else if (pw2Text === '') {
         this.PW2validateText = ''
       } else if (pw1Text === pw2Text) {
         this.PW2validateText = '비밀번호가 일치합니다.'
-        this.resultSuccess = true
-        this.resultFail = false
+        this.pwchResultSuccess = true
+        this.pwchResultFail = false
       } else if (pw1Text !== pw2Text) {
         this.PW2validateText = '비밀번호가 일치하지 않습니다.'
-        this.resultFail = true
+        this.pwchResultFail = true
         return false
       }
     },
@@ -151,7 +162,7 @@ export default {
         this.NAMEvalidateText = ''
       } else if (!reg.test(nameText)) {
         this.NAMEvalidateText = '최소 2자리, 최대 10자리 한글, 영문만 사용 가능합니다.'
-        this.resultFail = true
+        this.nameResultFail = true
         return false
       }
     },
@@ -210,17 +221,19 @@ export default {
     // ID, NAME 중복 체크
     userDuplicateCheck (event) {
       // console.log(event)
-      var userCheck = event.path['0'].id
-      var userLength = event.target.previousElementSibling.control.value
-      if (userCheck === 'idCheck') {
+      this.userCheck = event.path['0'].id
+      this.userLength = event.target.previousElementSibling.control.value
+      if (this.userCheck === 'idCheck') {
         this.userColumn = 'uid'
         this.userText = this.id
       } else {
         this.userColumn = 'name'
         this.userText = this.name
       }
-      if (userLength.length !== 0 && this.success === 1) {
-        this.$http.get(`/api/login/${userCheck}`, {
+      if (this.userLength.length === 0) {
+        alert('입력 하세요')
+      } else if (this.userLength.length !== 0 && this.success === 1) {
+        this.$http.get(`/api/login/${this.userCheck}`, {
           params: {
             userColumn: this.userColumn,
             userText: this.userText
@@ -258,6 +271,8 @@ export default {
       } else {
         return false
       }
+      this.userCheck = ''
+      this.userLength = ''
       this.success = 0
     }
   }
@@ -303,16 +318,22 @@ export default {
 .joinForm output:nth-of-type(2) {
   margin-bottom: 0.625rem; /* 10px */
 }
-.joinForm .outputSuccess {
-  color: #546cff;
-}
-.joinForm .outputFail {
-  color: #ff5454;
-}
 .joinForm .idOutputSuccess {
   color: #546cff;
 }
 .joinForm .idOutputFail {
+  color: #ff5454;
+}
+.joinForm .pwOutputSuccess {
+  color: #546cff;
+}
+.joinForm .pwOutputFail {
+  color: #ff5454;
+}
+.joinForm .pwchOutputSuccess {
+  color: #546cff;
+}
+.joinForm .pwchOutputFail {
   color: #ff5454;
 }
 .joinForm .nameOutputSuccess {
@@ -477,16 +498,22 @@ export default {
     height: 0;
     line-height: 140%;
   }
-  .joinForm .outputSuccess {
-    height: 2.1875rem; /* 35px */
-  }
-  .joinForm .outputFail {
-    height: 2.1875rem; /* 35px */
-  }
   .joinForm .idOutputSuccess {
     height: 2.1875rem; /* 35px */
   }
   .joinForm .idOutputFail {
+    height: 2.1875rem; /* 35px */
+  }
+  .joinForm .pwOutputSuccess {
+    height: 0; /* 35px */
+  }
+  .joinForm .pwOutputFail {
+    height: 2.1875rem; /* 35px */
+  }
+  .joinForm .pwchOutputSuccess {
+    height: 2.1875rem; /* 35px */
+  }
+  .joinForm .pwchOutputFail {
     height: 2.1875rem; /* 35px */
   }
   .joinForm .nameOutputSuccess {
@@ -545,6 +572,9 @@ export default {
   }
   .signUpBtn {
     width: 19.375rem; /* 310px */
+  }
+  .joinForm label input {
+    width: 11.25rem; /* 180px */
   }
   .doubleCheck {
     width: 9.375rem; /* 150px */
