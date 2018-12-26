@@ -9,11 +9,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faLock, faUnlock, faUserEdit, faSearch, faAngleDoubleLeft, faAngleLeft, faAngleRight, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope, faTrashAlt } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Vue2TouchEvents from 'vue2-touch-events'
 
 Vue.prototype.$http = axios
 Vue.prototype.$eventBus = new Vue()
 
 Vue.use(VueCookie)
+Vue.use(Vue2TouchEvents)
 
 // font Awesome Icon
 library.add(faLock, faUnlock, faUserEdit, faSearch, faEnvelope, faTrashAlt, faAngleDoubleLeft, faAngleLeft, faAngleRight, faAngleDoubleRight)
