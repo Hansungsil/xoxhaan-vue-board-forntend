@@ -31,7 +31,7 @@ export default {
   margin: 0 3.75rem 0 0.9375rem; /* 0 60px 0 15px */
 }
 #listPage .angleNext {
-  margin: 0 0.9375rem 0 2.1875rem; /* 0 60px 0 15px */
+  margin: 0 0.9375rem 0 2.1875rem; /* 0 15px 0 35px */
 }
 .clickPageNumColor {
   color: #4db7a9;
@@ -48,6 +48,7 @@ export default {
 .angleIcon {
   color: #4db7a9;
 }
+/* iphone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
   #listPage {
     margin-top: 3.75rem; /* 60px */
@@ -56,6 +57,15 @@ export default {
   .clickPageNumColor {
     font-size: 1.0625rem; /* 17px */
     margin-top: -0.1875rem; /* -3px */
+  }
+}
+/* iphone 5/SE */
+@media screen and (max-width: 320px) {
+  #listPage .anglePrev {
+    margin: 0 2.5rem 0 0.9375rem; /* 0 40px 0 15px */
+  }
+  #listPage .angleNext {
+    margin: 0 0.9375rem 0 1.25rem; /* 0 15px 0 20px */
   }
 }
 </style>
