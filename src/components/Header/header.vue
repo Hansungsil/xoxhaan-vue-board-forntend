@@ -1,7 +1,9 @@
 <template>
   <div id="allHeader">
     <transition name="subLogoShow" appear>
-      <p>BOARD&nbsp;<span>PROJECT</span></p>
+      <router-link to="/">
+        <p>BOARD&nbsp;<span>PROJECT</span></p>
+      </router-link>
     </transition>
     <div v-if="loggedIn" class="loginWrap">
       <span class="userName">{{ userName }}</span>
